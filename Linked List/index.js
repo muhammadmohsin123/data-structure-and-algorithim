@@ -48,7 +48,13 @@ class LinkedList {
     newNode.next = nextNode;
     this.length++;
   }
-
+  remove(index) {
+    const preNode = this.traverse(index - 1);
+    const unwantedNode = preNode.next;
+    const nextNode = unwantedNode.next;
+    preNode.next = nextNode;
+    this.length--;
+  }
   // Traversing LinkedList upto given index
   traverse(index) {
     let currentNode = this.head;
@@ -79,4 +85,5 @@ myLinkedList.prepend(1);
 myLinkedList.insert(44, 13);
 // console.log(myLinkedList.traverse(2));
 myLinkedList.insert(2, 99);
+myLinkedList.remove(2);
 console.log(myLinkedList.printlist());
