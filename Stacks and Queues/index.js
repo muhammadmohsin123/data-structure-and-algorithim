@@ -41,9 +41,26 @@ class Stack {
   }
 }
 
-const myStack = new Stack();
-myStack.push("google");
-myStack.push("facebook");
-myStack.push("udemy");
-myStack.pop();
-console.log(myStack);
+// const myStack = new Stack();
+// myStack.push("google");
+// myStack.push("facebook");
+// myStack.push("udemy");
+// myStack.pop();
+// console.log(myStack);
+
+// Implimenting Stack with array
+
+class StackwithArray {
+  constructor() {
+    this.array = [];
+  }
+  peak() {
+    return this.array[this.array.length - 1];
+  }
+  push(value) {
+    this.array.push(value);
+  }
+  pop() {
+    this.array.pop();
+  }
+}
