@@ -37,6 +37,23 @@ class Tree {
       }
     }
   }
+
+  lookup(value) {
+    if (!this.root) {
+      return false;
+    }
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else if (currentNode.value === value) {
+        return currentNode;
+      }
+    }
+    return null;
+  }
 }
 
 const myTree = new Tree();
@@ -47,4 +64,5 @@ myTree.insert(6);
 myTree.insert(1);
 myTree.insert(15);
 myTree.insert(170);
-console.log(JSON.stringify(myTree));
+
+console.log(JSON.stringify(myTree.lookup(15)));
